@@ -3,7 +3,7 @@ version: '3'
 services:
   kibana:    
     environment:
-      ELASTICSEARCH_URL: http://es.measures.globoi.com:80   
+      ELASTICSEARCH_URL: http://elasticsearch.com:9200   
     image: docker.elastic.co/kibana/kibana-oss:6.2.1
     networks:
       - app
