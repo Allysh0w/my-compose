@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  rethinkdb:
+    image: rethinkdb:latest
+    container_name: rethinkdb
+    ports:
+      - "28015:28015"   # Porta para conexões de drivers
+      - "29015:29015"   # Porta de cluster (intra-node)
+      - "8080:8080"     # Porta da interface web (admin)
+    volumes:
+      - rethinkdb_data:/data
+    restart: unless-stopped   
+    networks:
+      - rethinkdb-network
+
+networks: 
+  rethinkdb-network:
+    driver: bridge
+
+volumes:
+  rethinkdb_data:
