@@ -5,9 +5,9 @@ services:
     image: rethinkdb:latest
     container_name: rethinkdb
     ports:
-      - "28015:28015"   # Porta para conexões de drivers
-      - "29015:29015"   # Porta de cluster (intra-node)
-      - "8080:8080"     # Porta da interface web (admin)
+      - "28015:28015"   # driver port
+      - "29015:29015"   # cluster port
+      - "8080:8080"     # web interface
     volumes:
       - rethinkdb_data:/data
     restart: unless-stopped   
